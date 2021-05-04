@@ -11,7 +11,6 @@ class MovieLibrary extends Component {
 
   render() {
     const { movies } = this.props;
-    console.log(typeof movies);
     return (
       <div>
         <h2> My awesome movie library </h2>
@@ -24,15 +23,14 @@ class MovieLibrary extends Component {
           onSelectedGenreChange=""
         />
         <MovieList movies={ movies } />
-        <AddMovie onClick="" />
-        }
+        <AddMovie onClick={ handleClick } />
+
       </div>
     );
   }
 }
 MovieLibrary.propTypes = {
-  movies: PropTypes.arrayOf(
-    PropTypes.object,
-  ).isRequired,
+  movies: PropTypes.arrayOf(Object).isRequired,
+
 };
 export default MovieLibrary;
